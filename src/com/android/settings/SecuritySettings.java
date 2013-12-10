@@ -81,7 +81,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
     private static final String MENU_UNLOCK_PREF = "menu_unlock";
     private static final String KEY_SEE_TRHOUGH = "see_through";
-    private static final String KEY_BLUR_BEHIND = "blur_behind";
     private static final String KEY_BLUR_RADIUS = "blur_radius";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
@@ -138,7 +137,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
     private CheckBoxPreference mBatteryStatus;
     private CheckBoxPreference mSeeThrough;
-    private CheckBoxPreference mBlurBehind;
     
     private SeekBarPreference mBlurRadius;
 
@@ -264,15 +262,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
         // lockscreen see through
         mSeeThrough = (CheckBoxPreference) root.findPreference(KEY_SEE_TRHOUGH);
-        mBlurBehind = (CheckBoxPreference) root.findPreference(KEY_BLUR_BEHIND);
-        mBlurBehind.setChecked(Settings.System.getInt(getContentResolver(), 
-        		Settings.System.LOCKSCREEN_BLUR_BEHIND, 0) == 1);
-        mBlurBehind.setEnabled(mSeeThrough.isChecked());
         mBlurRadius = (SeekBarPreference) root.findPreference(KEY_BLUR_RADIUS);
         mBlurRadius.setProgress(Settings.System.getInt(getContentResolver(), 
         		Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
         mBlurRadius.setOnPreferenceChangeListener(this);
-        mBlurRadius.setEnabled(mBlurBehind.isChecked() && mBlurBehind.isEnabled());
+        mBlurRadius.setEnabled(mSeeThrough.isChecked() && mSeeThrough.isEnabled());
 
         // biometric weak liveliness
         mBiometricWeakLiveliness =
@@ -726,12 +720,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (preference == mSeeThrough) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
                     mSeeThrough.isChecked() ? 1 : 0);
-            mBlurBehind.setEnabled(mSeeThrough.isChecked());
-            mBlurRadius.setEnabled(mBlurBehind.isChecked() && mBlurBehind.isEnabled());
-        } else if (preference == mBlurBehind) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_BLUR_BEHIND,
-                    mBlurBehind.isChecked() ? 1 : 0);
-            mBlurRadius.setEnabled(mBlurBehind.isChecked());
+            mBlurRadius.setEnabled(mSeeThrough.isChecked());
         } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
