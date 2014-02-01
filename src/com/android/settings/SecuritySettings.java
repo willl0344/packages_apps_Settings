@@ -127,7 +127,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private Preference mEnableKeyguardWidgets;
     private ListPreference mAdvancedReboot;
-	private CheckBoxPreference mSeeThrough;
+    private CheckBoxPreference mSeeThrough;
 
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
