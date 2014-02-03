@@ -810,7 +810,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_networkmode">Network mode</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Screen timeout</string>
-    <string name="title_tile_quick_record">Quick Record</string>
+    <string name="title_tile_quick_record">Quick record</string>
     <string name="title_tile_quiet_hours">Quiet hours</string>
     <string name="title_tile_volume">Volume</string>
     <string name="title_tile_expanded_desktop">Expanded desktop</string>
@@ -924,7 +924,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
 
     <!-- Preference category for LAN development settings. [CHAR LIMIT=25] -->
-    <string name="debug_LAN_category">LAN Settings</string>
+    <string name="debug_LAN_category">LAN settings</string>
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
@@ -941,7 +941,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media_complete">Scan completed</string>
 
     <!-- Hardware keys -->
-    <string name="button_keys_title">Hardware Buttons</string>
+    <string name="button_keys_title">Hardware buttons</string>
     <string name="keys_bindings_title">Key actions</string>
     <string name="keys_enable_custom_title">Enable custom actions</string>
     <string name="keys_enable_custom_summary">Enable custom hardware key actions</string>
