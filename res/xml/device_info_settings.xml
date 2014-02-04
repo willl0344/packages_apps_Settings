@@ -137,7 +137,13 @@
                 android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Slim version -->
+        <!-- W03 Slim version -->
+        <Preference android:key="w03_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/w03_version_title"
+                android:summary="@string/w03_version_number"/>
+
+        <!-- Base Slim version -->
         <Preference android:key="slim_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/slim_version_title"
