@@ -259,6 +259,28 @@ public class SecuritySettings extends RestrictedSettingsFragment
         // lockscreen see through
         mSeeThrough = (CheckBoxPreference) root.findPreference(KEY_SEE_TRHOUGH);
 
+        // Link to widget settings showing summary about the actual status
+        // and remove them on low memory devices
+        mEnableKeyguardWidgets = root.findPreference(KEY_ENABLE_WIDGETS);
+        if (mEnableKeyguardWidgets != null) {
+            if (ActivityManager.isLowRamDeviceStatic()
+                    || mLockPatternUtils.isLockScreenDisabled()) {
+                // Widgets take a lot of RAM, so disable them on low-memory devices
+                if (securityCategory != null) {
+                    securityCategory.removePreference(root.findPreference(KEY_ENABLE_WIDGETS));
+                    mEnableKeyguardWidgets = null;
+                }
+            } else {
+                final boolean disabled = (0 != (mDPM.getKeyguardDisabledFeatures(null)
+                        & DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL));
+                if (disabled) {
+                    mEnableKeyguardWidgets.setSummary(
+                            R.string.security_enable_widgets_disabled_summary);
+                }
+                mEnableKeyguardWidgets.setEnabled(!disabled);
+            }
+        }
+
         // biometric weak liveliness
         mBiometricWeakLiveliness =
                 (CheckBoxPreference) root.findPreference(KEY_BIOMETRIC_WEAK_LIVELINESS);
@@ -336,28 +358,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 (TelephonyManager.getDefault().getSimState() ==
                                  TelephonyManager.SIM_STATE_UNKNOWN)) {
                 root.findPreference(KEY_SIM_LOCK).setEnabled(false);
-            }
-        }
-
-        // Link to widget settings showing summary about the actual status
-        // and remove them on low memory devices
-        mEnableKeyguardWidgets = root.findPreference(KEY_ENABLE_WIDGETS);
-        if (mEnableKeyguardWidgets != null) {
-            if (ActivityManager.isLowRamDeviceStatic()
-                    || mLockPatternUtils.isLockScreenDisabled()) {
-                // Widgets take a lot of RAM, so disable them on low-memory devices
-                if (securityCategory != null) {
-                    securityCategory.removePreference(root.findPreference(KEY_ENABLE_WIDGETS));
-                    mEnableKeyguardWidgets = null;
-                }
-            } else {
-                final boolean disabled = (0 != (mDPM.getKeyguardDisabledFeatures(null)
-                        & DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL));
-                if (disabled) {
-                    mEnableKeyguardWidgets.setSummary(
-                            R.string.security_enable_widgets_disabled_summary);
-                }
-                mEnableKeyguardWidgets.setEnabled(!disabled);
             }
         }
 
