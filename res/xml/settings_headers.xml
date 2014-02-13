@@ -237,13 +237,6 @@
         android:icon="@*android:drawable/ic_print"
         android:title="@string/print_settings" />
 
-    <!-- App Ops -->
-    <header
-        android:id="@+id/app_ops_settings"
-        android:icon="@drawable/ic_settings_applications"
-        android:fragment="com.android.settings.applications.AppOpsSummary"
-        android:title="@string/app_ops_settings" />
-
     <!-- Development -->
     <header
         android:id="@+id/development_settings"
