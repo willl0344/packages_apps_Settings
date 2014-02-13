@@ -161,4 +161,10 @@
                 android:title="@string/selinux_status"
                 android:summary="@string/selinux_status_enforcing"/>
 
+        <!-- Asswax -->
+        <Preference android:key="asswax"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/asswax_title"
+                android:summary="@string/asswax_desc"/>
+
 </PreferenceScreen>

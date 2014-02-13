@@ -101,4 +101,8 @@
     <string name="ram_bar_reset">Reset</string>
     <string name="ram_bar_reset_message">Reset RAM bar style to default?</string>
 
+    <!-- Asswax -->
+    <string name="asswax_title">Asswax</string>
+    <string name="asswax_desc">Minions and henchmen, hail the asswax</string>
+
 </resources>
