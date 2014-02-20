@@ -4,7 +4,7 @@
 
     <!-- W03 Slim Version -->
     <string name="w03_version_title">W03 Slim version</string>
-    <string name="w03_version_number">V4.2</string>
+    <string name="w03_version_number">V5</string>
 
     <!-- General strings -->
     <string name="recents_panel_settings_title" >Recents panel settings</string>
