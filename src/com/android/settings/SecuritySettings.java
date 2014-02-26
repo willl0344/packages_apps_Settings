@@ -23,7 +23,6 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,7 +35,6 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
-import android.preference.SeekBarPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
@@ -82,7 +80,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
     private static final String MENU_UNLOCK_PREF = "menu_unlock";
     private static final String KEY_SEE_TRHOUGH = "see_through";
-    private static final String KEY_BLUR_RADIUS = "blur_radius";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -138,11 +135,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
     private CheckBoxPreference mBatteryStatus;
     private CheckBoxPreference mSeeThrough;
-    private SeekBarPreference mBlurRadius;
 
     private Preference mNotificationAccess;
-
-    private Context mContext;
 
     // needed for menu unlock
     private Resources keyguardResource;
@@ -156,9 +150,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     public SecuritySettings() {
         super(null /* Don't ask for restrictions pin on creation. */);
     }
-
-    private Activity mActivity;
-    private ContentResolver mResolver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -184,21 +175,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
     private PreferenceScreen createPreferenceHierarchy() {
         PreferenceScreen root = getPreferenceScreen();
-
-        mContext = getActivity();
-        mActivity = getActivity();
-        mResolver = mActivity.getContentResolver();
-
-        PreferenceScreen prefs = getPreferenceScreen();
-
         if (root != null) {
             root.removeAll();
         }
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
-
-        final ContentResolver resolver = getContentResolver();
-        final Resources res = getResources();
 
         // Add package manager to check if features are available
         PackageManager pm = getPackageManager();
@@ -274,6 +255,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
             setupLockAfterPreference();
             updateLockAfterPreferenceSummary();
         }
+
+        // lockscreen see through
+        mSeeThrough = (CheckBoxPreference) root.findPreference(KEY_SEE_TRHOUGH);
 
         // biometric weak liveliness
         mBiometricWeakLiveliness =
@@ -354,17 +338,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 root.findPreference(KEY_SIM_LOCK).setEnabled(false);
             }
         }
-        // lockscreen see through
-        mSeeThrough = (CheckBoxPreference) root.findPreference(KEY_SEE_TRHOUGH);
-        if (mSeeThrough != null) {
-            mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
-            mSeeThrough.setOnPreferenceChangeListener(this);
-        }
-        mBlurRadius = (SeekBarPreference) prefs.findPreference(KEY_BLUR_RADIUS);
-        mBlurRadius.setProgress(Settings.System.getInt(resolver, 
-            Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
-        mBlurRadius.setOnPreferenceChangeListener(this);
 
         // Link to widget settings showing summary about the actual status
         // and remove them on low memory devices
@@ -813,9 +786,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN,
                     ((Boolean) value) ? 1 : 0, UserHandle.USER_CURRENT);
-        } else if (preference == mBlurRadius) {
-            Settings.System.putInt(getContentResolver(), 
-                    Settings.System.LOCKSCREEN_BLUR_RADIUS, (Integer)value);
         }
         return true;
     }
