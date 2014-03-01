@@ -94,6 +94,10 @@
             android:max="25"
             android:defaultValue="12" />
 
+        <PreferenceScreen
+            android:title="@string/lockscreen_notifications"
+            android:fragment="com.android.settings.crdroid.LockscreenNotifications"
+            android:summary="@string/lockscreen_notifications_summary" />
 
     </PreferenceCategory>
 
