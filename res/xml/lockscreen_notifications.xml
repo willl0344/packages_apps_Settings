@@ -27,18 +27,6 @@
             android:summary="@string/lockscreen_notifications_summary" />
 
         <CheckBoxPreference
-            android:key="pocket_mode"
-            android:title="@string/pocket_mode"
-            android:dependency="lockscreen_notifications"
-            android:summary="@string/pocket_mode_summary" />
-
-        <CheckBoxPreference
-            android:key="show_always"
-            android:title="@string/show_always"
-            android:dependency="lockscreen_notifications"
-            android:summary="@string/show_always_summary" />
-
-        <CheckBoxPreference
             android:key="wake_on_notification"
             android:title="@string/wake_on_notification"
             android:dependency="lockscreen_notifications"
