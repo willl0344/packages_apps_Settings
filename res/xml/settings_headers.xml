@@ -89,6 +89,14 @@
         android:icon="@drawable/ic_settings_halo" 
         android:title="@string/halo_settings_title" />
 
+    <!-- Wakelock Blocker -->
+    <header
+        android:id="@+id/wakelock_blocker"
+        android:fragment="com.android.settings.crdroid.WakeLockBlocker"
+        android:icon="@drawable/ic_settings_wakelock_blocker"
+        android:layout="@layout/preference_wakelockblocker"
+        android:title="@string/wakelock_blocker" />
+
     <!-- SlimCenter -->
     <header
         android:id="@+id/slim_center"
