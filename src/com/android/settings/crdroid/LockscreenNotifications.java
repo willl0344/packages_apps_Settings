@@ -133,6 +133,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         Set<String> excludedApps = getExcludedApps();
         if (excludedApps != null) mExcludedAppsPref.setValues(excludedApps);
         mExcludedAppsPref.setOnPreferenceChangeListener(this);
+    }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
