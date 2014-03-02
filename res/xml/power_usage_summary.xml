@@ -30,6 +30,12 @@
         android:entryValues="@array/pref_low_battery_warning_policy_values"
         android:defaultValue="0" />
 
+    <PreferenceScreen
+        android:id="@+id/wakelock_blocker"
+        android:fragment="com.android.settings.crdroid.WakeLockBlocker"
+        android:layout="@layout/preference_wakelockblocker"
+        android:title="@string/wakelock_blocker" />
+
     <PreferenceCategory
         android:key="battery_stats"
         android:title="@string/battery_stats_title" />
