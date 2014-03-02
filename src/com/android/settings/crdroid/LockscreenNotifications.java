@@ -52,6 +52,8 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private AppMultiSelectListPreference mExcludedAppsPref;
     private ColorPickerPreference mNotificationColor;
 
+    private Context mContext;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
