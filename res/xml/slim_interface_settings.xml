@@ -34,9 +34,4 @@
         android:fragment="com.android.settings.slim.StatusBar"
         android:title="@string/status_bar_title" />
 
-    <PreferenceScreen
-        android:key="recents_panel"
-        android:fragment="com.android.settings.crdroid.RecentsPanelSettings"
-        android:title="@string/recents_panel_settings_title" />
-
 </PreferenceScreen>
