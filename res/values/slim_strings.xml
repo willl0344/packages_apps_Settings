@@ -50,7 +50,7 @@
     <string name="set">Set</string>
 
     <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Slim version</string>
+    <string name="slim_version_title">Base Slim version</string>
     <string name="slim_version_default">Unknown</string>
 
     <!-- Display settings screen, notification light settings -->
