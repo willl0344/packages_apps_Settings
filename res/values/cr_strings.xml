@@ -160,4 +160,9 @@
     <string name="peek_wake_30seconds">30 seconds</string>
 
 
+    <!-- Restart SystemUI -->
+    <string name="general_settings_title">General settings</string>
+    <string name="general_settings_style_title">General options</string>
+    <string name="restart_systemui">Restart SystemUI</string>
+
 </resources>
