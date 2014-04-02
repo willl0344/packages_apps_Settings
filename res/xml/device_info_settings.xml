@@ -137,12 +137,6 @@
                 android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Note 3 old tree -->
-        <Preference android:key="n3tree"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/device_tree"
-                android:summary="@string/new_tree_info"/>
-
         <!-- W03 Slim version -->
         <Preference android:key="w03_version"
                 style="?android:preferenceInformationStyle"
