@@ -6,10 +6,6 @@
     <string name="w03_version_title">W03 Slim version</string>
     <string name="w03_version_number">V11</string>
 
-    <!-- Note 3 old tree -->
-    <string name="device_tree">Note 3 device tree</string>
-    <string name="old_tree_info">Old device tree build. Only compaible with 4.3 bootloader, Temasek kernel v1.03 (built-in) and LK v1.2</string>
-
     <!-- Halo -->
     <string name="halo_settings_title">Halo</string>
     <string name="halo_behavior_title">Halo behavior</string>
