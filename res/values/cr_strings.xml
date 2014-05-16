@@ -6,6 +6,10 @@
     <string name="w03_version_title">W03 Slim version</string>
     <string name="w03_version_number">V16</string>
 
+    <!-- Note 3 old tree -->
+    <string name="device_tree">Note 3 device tree</string>
+    <string name="new_tree_info">New device tree build. Compatible with 4.3 and 4.4 bootloaders, LK v2+, Temasek kernel v3+ And Yank kernel</string>
+
     <!-- Halo -->
     <string name="halo_settings_title">Halo</string>
     <string name="halo_behavior_title">Halo behavior</string>
