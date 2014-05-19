@@ -23,4 +23,9 @@
         android:summary="@string/screen_recorder_record_audio_summary"
         android:defaultValue="false" />
 
+    <Preference android:key="screenrechow"
+            style="?android:preferenceInformationStyle"
+            android:title="@string/screen_recorder_record_how_title"
+            android:summary="@string/screen_recorder_record_how_desc"/>
+
 </PreferenceScreen>

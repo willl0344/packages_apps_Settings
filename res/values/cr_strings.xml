@@ -72,6 +72,8 @@
     <string name="screen_recorder_video_bitrate_title">Bitrate</string>
     <string name="screen_recorder_record_audio_title">Record audio</string>
     <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
+    <string name="screen_recorder_record_how_title">To activate screen recorder</string>
+    <string name="screen_recorder_record_how_desc">Press power + volume up buttons</string>
     <!-- video sizes -->
     <string name="screen_recorder_size_240x400">240x400</string>
     <string name="screen_recorder_size_360x640">360x640</string>
