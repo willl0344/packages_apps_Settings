@@ -56,6 +56,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
+    private static final String KEY_IS_INACCURATE_PROXIMITY = "is_inaccurate_proximity";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -74,6 +75,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_90 = "90";
     private static final String ROTATION_ANGLE_180 = "180";
     private static final String ROTATION_ANGLE_270 = "270";
+    private CheckBoxPreference mInaccurateProximityPref;
 
     private PreferenceScreen mDisplayRotationPreference;
     private WarnedListPreference mFontSizePref;
@@ -165,6 +167,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 updateBatteryPulseDescription();
             }
+
+        // In-accurate proximity
+         mInaccurateProximityPref = (CheckBoxPreference) findPreference(KEY_IS_INACCURATE_PROXIMITY);
+         if (mInaccurateProximityPref != null) {
+             mInaccurateProximityPref.setChecked(Settings.System.getInt(resolver,
+                     Settings.System.INACCURATE_PROXIMITY_WORKAROUND, 0) == 1);
+             mInaccurateProximityPref.setOnPreferenceChangeListener(this);
+         }
 
             //If we're removed everything, get rid of the category
             if (mLightOptions.getPreferenceCount() == 0) {
@@ -479,9 +489,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
-        }
-        if (KEY_FONT_SIZE.equals(key)) {
+        } else if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
+        } else if (KEY_IS_INACCURATE_PROXIMITY.equals(key)) {
+             Settings.System.putInt(getContentResolver(),
+                     Settings.System.INACCURATE_PROXIMITY_WORKAROUND,
+                     ((Boolean) objValue).booleanValue() ? 1 : 0);
         }
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),

@@ -159,4 +159,8 @@
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
+     <!-- Proximity work-around -->
+     <string name="is_inaccurate_proximity_title">Inaccurate proximity</string>
+     <string name="is_inaccurate_proximity_summary">Work-around for inaccurate proximity sensors: this will force phone to turn on the screen after the call has ended.</string>
+
 </resources>
