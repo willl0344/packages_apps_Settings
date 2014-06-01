@@ -39,6 +39,11 @@
         android:fragment="com.android.settings.crdroid.RecentsPanelSettings"
         android:title="@string/recents_panel_settings_title" />
 
+    <PreferenceScreen
+        android:key="app_circle_sidebar"
+        android:fragment="com.android.settings.crdroid.AppCircleSidebar"
+        android:title="@string/app_circle_bar_title" />
+		
     <Preference
         android:key="misc_tweaks"
         android:fragment="com.android.settings.du.MiscTweaks"
