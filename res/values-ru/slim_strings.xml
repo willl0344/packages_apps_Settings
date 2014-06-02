@@ -145,8 +145,12 @@
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Чувствительность обнаружения тряски</string>
     <string name="shake_sensitivity_summary">Общая чувствительность всех настроек тряски</string>
+    <string name="shake_sensitivity_even_less_sensitive">Минимальная чувствительность</string>
     <string name="shake_sensitivity_less_sensitive">Меньшая чувствительность</string>
     <string name="shake_sensitivity_more_sensitive">Большая чувствительность</string>
+    <string name="shake_sensitivity_very_sensitive">Высокая чувствительность</string>
+    <string name="shake_sensitivity_super_sensitive">Супер-чувствительность</string>
+    <string name="shake_sensitivity_ultra_sensitive">Ультра-чувствительность</string>
 
     <string name="pref_low_battery_warning_policy_title">Низкий заряд батареи</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Предупреждение о низком заряде</string>
@@ -375,6 +379,9 @@
     <string name="lock_screen_title">Экран блокировки</string>
     <string name="lock_screen_summary">Просмотреть или изменить настройки экрана блокировки</string>
     <string name="lockscreen_widgets_title">Виджеты</string>
+    <string name="lockscreen_allow_all_title">Разрешить все виджеты</string>
+    <string name="lockscreen_allow_all_summary">Разрешить также виджеты, которые изначально не поддерживают расположение на экране блокировки</string>
+    <string name="lockscreen_allow_all_warning">Некоторые виджеты на экране блокировки могут работать не так, как ожидается. Некоторые могут показать ваши личные данные лицам, имеющим доступ к вашему аппарату. Пожалуйста, будтье внимательны, включая эту возможность.</string>
     <string name="lockscreen_camera_widget_title">Включить виджет камеры</string>
     <string name="lockscreen_camera_widget_summary">Показывать виджет камеры на экране блокировки</string>
     <string name="lockscreen_maximize_widgets_title">В полный экран</string>
