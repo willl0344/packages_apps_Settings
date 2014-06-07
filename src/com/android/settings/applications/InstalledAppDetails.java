@@ -1497,7 +1497,6 @@ public class InstalledAppDetails extends Fragment
             }
         } else if (buttonView == mHaloState) {
             setHaloState(isChecked);
-        }
         } else if (buttonView == mPrivacyGuardSwitch) {
             if (isChecked) {
                 showDialogInner(DLG_PRIVACY_GUARD, 0);
