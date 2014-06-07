@@ -2851,7 +2851,7 @@
 
     <!-- App Ops Settings --> <skip />
     <!-- [CHAR LIMIT=NONE] App ops settings title, on main settings screen. If clicked, the user is taken to a settings screen for app operations -->
-    <string name="app_ops_settings">App ops</string>
+    <string name="app_ops_settings">AppOps</string>
     <!-- [CHAR LIMIT=NONE] Time label for an operation that is currently running. -->
     <string name="app_ops_running">Running</string>
     <!-- [CHAR LIMIT=NONE] Time label for an operation that has never executed. -->
@@ -4906,4 +4906,10 @@
     <!-- Setting checkbox summary for displaying USB debugging notification -->
     <string name="adb_notify">USB debugging notify</string>
     <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
+
+    <!-- AppOps additions -->
+    <string name="app_ops_sysapp_beware">Beware!</string>
+    <string name="app_ops_sysapp_warning">"Changing permissions of apps may cause malfunction!"</string>
+    <string name="app_ops_summary">Use the original AppOps to manage permissions"</string>
+
 </resources>
