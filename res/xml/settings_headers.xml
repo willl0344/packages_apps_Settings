@@ -82,6 +82,13 @@
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
 
+    <!-- Privacy Guard -->
+    <header
+        android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+        android:icon="@drawable/ic_settings_privacy"
+        android:title="@string/privacy_guard_manager_title"
+        android:id="@+id/privacy_guard_manager" />
+
     <!-- HALO -->
     <header
         android:id="@+id/halo_settings"
@@ -173,13 +180,6 @@
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"
         android:id="@+id/security_settings" />
-
-    <!-- Privacy Guard -->
-    <header
-        android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
-        android:icon="@drawable/ic_settings_privacy"
-        android:title="@string/privacy_guard_manager_title"
-        android:id="@+id/privacy_guard_manager" />
 
     <!-- Language -->
     <header
