@@ -99,7 +99,7 @@
     <string name="battery_light_full_color_title">Fully charged</string>
 
     <!-- Privacy Guard -->
-    <string name="app_security_title">App security</string>
+    <string name="app_security_title">Communications</string>
 
     <!-- Wi-Fi region code settings-->
     <string name="wifi_setting_countrycode_title">Wi-Fi region code</string>
