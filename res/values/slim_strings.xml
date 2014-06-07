@@ -98,6 +98,9 @@
     <string name="battery_light_medium_color_title">Medium charge</string>
     <string name="battery_light_full_color_title">Fully charged</string>
 
+    <!-- Privacy Guard -->
+    <string name="app_security_title">App security</string>
+
     <!-- Wi-Fi region code settings-->
     <string name="wifi_setting_countrycode_title">Wi-Fi region code</string>
     <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]. -->
