@@ -144,7 +144,6 @@ public class InstalledAppDetails extends Fragment
     private Button mMoveAppButton;
     private CompoundButton mNotificationSwitch, mHaloState;
     private Button mAppOpsButton;
-    private CompoundButton mNotificationSwitch;
 
     private PackageMoveObserver mPackageMoveObserver;
 
