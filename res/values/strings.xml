@@ -4910,6 +4910,6 @@
     <!-- AppOps additions -->
     <string name="app_ops_sysapp_beware">Beware!</string>
     <string name="app_ops_sysapp_warning">"Changing permissions of apps may cause malfunction!"</string>
-    <string name="app_ops_summary">Use the original AppOps to manage permissions"</string>
+    <string name="app_ops_summary">Use AppOps to manage permissions"</string>
 
 </resources>
