@@ -106,7 +106,7 @@
     <string name="privacy_guard_default_title">Enabled by default</string>
     <string name="privacy_guard_default_summary">Do not access personal data by default for newly-installed apps</string>
     <string name="privacy_guard_notification_title">Notification</string>
-    <string name="privacy_guard_notifiation_summary">Show notification if privacy guard is active.</string>
+    <string name="privacy_guard_notifiation_summary">Show notification if Privacy guard is active</string>
     <string name="privacy_guard_manager_title">Privacy guard</string>
     <string name="privacy_guard_manager_summary">Manage which apps have access to your personal data and other apps permissions</string>
     <string name="privacy_guard_no_user_apps">No apps are installed</string>
