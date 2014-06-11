@@ -82,32 +82,12 @@
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
 
-<<<<<<< HEAD
     <!-- Privacy Guard -->
     <header
         android:fragment="com.android.settings.slim.privacyguard.PrivacyGuardManager"
         android:icon="@drawable/ic_settings_privacy"
         android:title="@string/privacy_guard_manager_title"
         android:id="@+id/privacy_guard_manager" />
-
-    <!-- HALO -->
-    <header
-        android:id="@+id/halo_settings"
-        android:fragment="com.android.settings.crdroid.Halo"
-        android:icon="@drawable/ic_settings_halo" 
-        android:title="@string/halo_settings_title" />
-=======
-    <!-- SlimCenter -->
-    <header
-        android:id="@+id/slim_center"
-        android:title="@string/slim_center_title"
-        android:icon="@drawable/ic_settings_slimcenter">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.slim.ota"
-            android:targetClass="com.slim.center.SlimCenter" />
-    </header>
->>>>>>> parent of 9b94bb7... (2/2) All in one Halo integration, fixes and master switch for Slim 4.4
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
