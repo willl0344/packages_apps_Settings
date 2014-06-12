@@ -235,7 +235,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         }
 
-        mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
+        mPeekPickupTimeout = (ListPreference) prefSet.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
         int peekPickupTimeout = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.PEEK_PICKUP_TIMEOUT, 10000, UserHandle.USER_CURRENT);
         mPeekPickupTimeout.setValue(String.valueOf(peekPickupTimeout));
