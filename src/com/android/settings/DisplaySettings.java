@@ -208,7 +208,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
         int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT, 0, UserHandle.USER_CURRENT);
+                Settings.System.PEEK_PICKUP_TIMEOUT, 10000, UserHandle.USER_CURRENT);
         mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
         mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);
@@ -524,11 +524,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                      ((Boolean) objValue).booleanValue() ? 1 : 0);
         }
         } else if (pref == mPeekPickupTimeout) {
+            int index = mPeekPickupTimeout.findIndexOfValue((String) value);
             int peekTimeout = Integer.valueOf((String) value);
             Settings.System.putIntForUser(getContentResolver(),
                 Settings.System.PEEK_PICKUP_TIMEOUT,
                     peekTimeout, UserHandle.USER_CURRENT);
-            updatePeekTimeoutOptions(value);
+            mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
             return true;
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),
@@ -581,13 +582,4 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
         return false;
     }
-
-    private void updatePeekTimeoutOptions(Object newValue) {
-        int index = mPeekPickupTimeout.findIndexOfValue((String) newValue);
-        int value = Integer.valueOf((String) newValue);
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT, value);
-        mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
-    }
-
 }
