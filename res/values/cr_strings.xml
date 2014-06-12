@@ -145,4 +145,12 @@
     <string name="custom_recent_title">Switch Recents styles</string>
     <string name="custom_recent_summary">Tick to Slim recents or untick for stock recents. TICKING OR UNTICKING THIS BOX WILL RESTART YOUR SYSTEMUI</string>
 
+    <!--Peek aditional features-->
+    <string name="peek_pickup_10seconds">10 seconds (default)</string>
+    <string name="peek_pickup_30seconds">30 seconds</string>
+    <string name="peek_pickup_45seconds">45 seconds</string>
+    <string name="peek_pickup_60seconds">1 minute</string>
+    <string name="peek_pickup_120seconds">2 minutes</string>
+
+
 </resources>
