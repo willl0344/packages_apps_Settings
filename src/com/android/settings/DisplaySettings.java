@@ -50,6 +50,9 @@ import com.android.internal.view.RotationPolicy;
 import com.android.settings.DreamSettings;
 import com.android.settings.slim.DisplayRotation;
 
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.R;
+
 import java.util.ArrayList;
 
 public class DisplaySettings extends SettingsPreferenceFragment implements
