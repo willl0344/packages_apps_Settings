@@ -242,7 +242,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);
 
-        mPeekWakeTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_WAKE_TIMEOUT);
+        mPeekWakeTimeout = (ListPreference) prefSet.findPreference(KEY_PEEK_WAKE_TIMEOUT);
         int peekWakeTimeout = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.PEEK_WAKE_TIMEOUT, 5000, UserHandle.USER_CURRENT);
         mPeekWakeTimeout.setValue(String.valueOf(peekWakeTimeout));
