@@ -72,6 +72,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_PEEK = "notification_peek";
     private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
+    private static final String KEY_PEEK_WAKE_TIMEOUT = "peek_wake_timeout";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -84,6 +85,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mDisplayRotationPreference;
     private CheckBoxPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
+    private ListPreference mPeekWakeTimeout;
     private WarnedListPreference mFontSizePref;
     private CheckBoxPreference mNotificationPulse;
     private PreferenceCategory mLightOptions;
@@ -207,11 +209,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
-        int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
+        int peekPickupTimeout = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.PEEK_PICKUP_TIMEOUT, 10000, UserHandle.USER_CURRENT);
-        mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
+        mPeekPickupTimeout.setValue(String.valueOf(peekPickupTimeout));
         mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);
+
+        mPeekWakeTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_WAKE_TIMEOUT);
+        int peekWakeTimeout = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.PEEK_WAKE_TIMEOUT, 5000, UserHandle.USER_CURRENT);
+        mPeekWakeTimeout.setValue(String.valueOf(peekWakeTimeout));
+        mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntry());
+        mPeekWakeTimeout.setOnPreferenceChangeListener(this);
 
         mWakeUpWhenPluggedOrUnplugged =
             (CheckBoxPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
@@ -522,15 +531,23 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
              Settings.System.putInt(getContentResolver(),
                      Settings.System.INACCURATE_PROXIMITY_WORKAROUND,
                      ((Boolean) objValue).booleanValue() ? 1 : 0);
-        }
         } else if (pref == mPeekPickupTimeout) {
             int index = mPeekPickupTimeout.findIndexOfValue((String) value);
-            int peekTimeout = Integer.valueOf((String) value);
+            int peekPickupTimeout = Integer.valueOf((String) value);
             Settings.System.putIntForUser(getContentResolver(),
                 Settings.System.PEEK_PICKUP_TIMEOUT,
-                    peekTimeout, UserHandle.USER_CURRENT);
+                    peekPickupTimeout, UserHandle.USER_CURRENT);
             mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
             return true;
+        } else if (pref == mPeekWakeTimeout) {
+            int index = mPeekWakeTimeout.findIndexOfValue((String) value);
+            int peekWakeTimeout = Integer.valueOf((String) value);
+            Settings.System.putIntForUser(getContentResolver(),
+                Settings.System.PEEK_WAKE_TIMEOUT,
+                    peekWakeTimeout, UserHandle.USER_CURRENT);
+            mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntries()[index]);
+            return true;
+        }
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
