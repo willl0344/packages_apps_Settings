@@ -141,4 +141,8 @@
       <string name="recents_panel_settings_title" >Recents panel settings</string>
       <string name="reset">Reset</string>
 
+    <!-- Custom Recent Settings -->
+    <string name="custom_recent_title">Switch Recents styles</string>
+    <string name="custom_recent_summary">Tick to Slim recents or untick for stock recents. TICKING OR UNTICKING THIS BOX WILL RESTART YOUR SYSTEMUI</string>
+
 </resources>
