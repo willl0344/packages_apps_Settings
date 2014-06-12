@@ -572,7 +572,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
              Settings.System.putInt(getContentResolver(),
                      Settings.System.INACCURATE_PROXIMITY_WORKAROUND,
                      ((Boolean) objValue).booleanValue() ? 1 : 0);
-        } else if (pref == mPeekPickupTimeout) {
+        } else if (preference == mPeekPickupTimeout) {
             int index = mPeekPickupTimeout.findIndexOfValue((String) value);
             int peekPickupTimeout = Integer.valueOf((String) value);
             Settings.System.putIntForUser(getContentResolver(),
@@ -580,7 +580,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     peekPickupTimeout, UserHandle.USER_CURRENT);
             mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
             return true;
-        } else if (pref == mPeekWakeTimeout) {
+        } else if (preference == mPeekWakeTimeout) {
             int index = mPeekWakeTimeout.findIndexOfValue((String) value);
             int peekWakeTimeout = Integer.valueOf((String) value);
             Settings.System.putIntForUser(getContentResolver(),
