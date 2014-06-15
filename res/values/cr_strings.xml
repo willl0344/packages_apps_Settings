@@ -145,4 +145,19 @@
     <string name="custom_recent_title">Switch recents styles</string>
     <string name="custom_recent_summary">Tick for Slim recents. Untick for stock recents, compatible with the options below. This will restart your SystemUI.</string>
 
+    <!--Peek aditional features-->
+    <string name="peek_pickup_timeout_title">Peek pickup timeout</string>
+    <string name="peek_pickup_10seconds">10 seconds (default)</string>
+    <string name="peek_pickup_30seconds">30 seconds</string>
+    <string name="peek_pickup_45seconds">45 seconds</string>
+    <string name="peek_pickup_60seconds">1 minute</string>
+    <string name="peek_pickup_120seconds">2 minutes</string>
+    <string name="peek_wake_timeout_title">Peek wake timeout</string>
+    <string name="peek_wake_3seconds">3 seconds</string>
+    <string name="peek_wake_5seconds">5 seconds (default)</string>
+    <string name="peek_wake_10seconds">10 seconds</string>
+    <string name="peek_wake_20seconds">20 seconds</string>
+    <string name="peek_wake_30seconds">30 seconds</string>
+
+
 </resources>
