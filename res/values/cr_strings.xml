@@ -142,8 +142,8 @@
       <string name="reset">Reset</string>
 
     <!-- Custom Recent Settings -->
-    <string name="custom_recent_title">Switch Recents styles</string>
-    <string name="custom_recent_summary">Tick to Slim recents or untick for stock recents. TICKING OR UNTICKING THIS BOX WILL RESTART YOUR SYSTEMUI</string>
+    <string name="custom_recent_title">Switch recents styles</string>
+    <string name="custom_recent_summary">Tick for Slim recents. Untick for stock recents, compatible with the options below. This will restart your SystemUI.</string>
 
     <!--Peek aditional features-->
     <string name="peek_pickup_timeout_title">Peek pickup timeout</string>
