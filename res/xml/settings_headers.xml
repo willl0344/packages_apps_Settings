@@ -82,19 +82,19 @@
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
 
-    <!-- Privacy Guard -->
-    <header
-        android:fragment="com.android.settings.slim.privacyguard.PrivacyGuardManager"
-        android:icon="@drawable/ic_settings_privacy"
-        android:title="@string/privacy_guard_manager_title"
-        android:id="@+id/privacy_guard_manager" />
-
     <!-- Hover -->
     <header
         android:id="@+id/hover_settings"
         android:icon="@drawable/ic_settings_hover"
         android:fragment="com.android.settings.crdroid.HoverSettings"
         android:title="@string/hover_settings_title" />
+
+    <!-- Privacy Guard -->
+    <header
+        android:fragment="com.android.settings.slim.privacyguard.PrivacyGuardManager"
+        android:icon="@drawable/ic_settings_privacy"
+        android:title="@string/privacy_guard_manager_title"
+        android:id="@+id/privacy_guard_manager" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
