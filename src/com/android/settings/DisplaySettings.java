@@ -67,6 +67,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
     private static final String KEY_DISABLE_SMART_COVER = "disable_smart_cover";
+    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
