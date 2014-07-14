@@ -4,7 +4,7 @@
 
     <!-- W03 Slim Version -->
     <string name="w03_version_title">W03 Slim version</string>
-    <string name="w03_version_number">V22</string>
+    <string name="w03_version_number">V23</string>
 
     <!-- Network usage stats -->
     <string name="status_bar_network_cat">Network traffic meter</string>
