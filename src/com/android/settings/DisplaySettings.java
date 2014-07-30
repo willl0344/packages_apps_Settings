@@ -83,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_PEEK_WAKE_TIMEOUT = "peek_wake_timeout";
 
     private static final String PEEK_APPLICATION = "com.jedga.peek";
+    private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -308,6 +309,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mIntentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
         }
         getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
+
+        Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {

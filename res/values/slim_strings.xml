@@ -416,6 +416,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="shortcut_action_camera">Camera</string>
+    <string name="shortcut_action_media_next">Music - next track</string>
+    <string name="shortcut_action_media_play_pause">Music - play/pause</string>
+    <string name="shortcut_action_media_previous">Music - previous track</string>
+    <string name="shortcut_action_wake_device">Wake up device</string>
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -1240,6 +1245,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_expanded_summary">Show heads up notification always expanded</string>
     <string name="heads_up_show_updates_title">Show updates</string>
     <string name="heads_up_show_updates_summary">Show updates from pending background notifications as heads up</string>
+    <string name="heads_up_gravity_title">Show at the bottom</string>
+    <string name="heads_up_gravity_summary">Show heads up notification at the bottom of the screen</string>
     <string name="heads_up_snooze_title">Snooze timer</string>
     <string name="heads_up_snooze_summary">If snooze button is pressed disable heads up for <xliff:g id="number">%d</xliff:g> minutes.</string>
     <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled.</string>
@@ -1257,5 +1264,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_time_out_10sec">10 seconds</string>
     <string name="heads_up_time_out_never">Never</string>
     <string name="heads_up_switch_label">Enable heads up notification</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Screen off gestures</string>
 
 </resources>
