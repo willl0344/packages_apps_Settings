@@ -179,4 +179,8 @@
     <!-- Text for Misc Tweaks entry -->
     <string name="misc_tweaks_title">Misc. tweaks</string>
 
+    <!-- Heads up floating window -->
+    <string name="heads_up_floating_window">Launch in floating window</string>
+    <string name="heads_up_floating_window_summary">Tapping on the notification will open the app in a floating window</string>
+
 </resources>

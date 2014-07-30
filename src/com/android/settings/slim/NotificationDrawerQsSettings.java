@@ -47,6 +47,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     // Default timeout for heads up snooze. 5 minutes.
     protected static final int DEFAULT_TIME_HEADS_UP_SNOOZE = 300000;
 
+    private static final String PREF_HEADS_UP_FLOATING_WINDOW =
+            "heads_up_floating_window";
     private static final String PREF_HEADS_UP_EXPANDED =
             "heads_up_expanded";
     private static final String PREF_HEADS_UP_SNOOZE_TIME =
@@ -91,6 +93,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     CheckBoxPreference mCollapsePanel;
     ListPreference mHeadsUpSnoozeTime;
     ListPreference mHeadsUpTimeOut;
+    CheckBoxPreference mHeadsUpFloatingWindow;
     CheckBoxPreference mHeadsUpExpanded;
     CheckBoxPreference mHeadsUpShowUpdates;
     CheckBoxPreference mHeadsUpGravity;
@@ -194,6 +197,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mCollapsePanel.setOnPreferenceChangeListener(this);
 
         updateQuickSettingsOptions();
+
+        mHeadsUpFloatingWindow = (CheckBoxPreference) findPreference(PREF_HEADS_UP_FLOATING_WINDOW);
+        mHeadsUpFloatingWindow.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.HEADS_UP_FLOATING_WINDOW, 0, UserHandle.USER_CURRENT) == 1);
+        mHeadsUpFloatingWindow.setOnPreferenceChangeListener(this);
 
         mHeadsUpExpanded = (CheckBoxPreference) findPreference(PREF_HEADS_UP_EXPANDED);
         mHeadsUpExpanded.setChecked(Settings.System.getIntForUser(getContentResolver(),
@@ -301,6 +309,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
                     Settings.System.HEADS_UP_NOTIFCATION_DECAY,
                     headsUpTimeOut);
             updateHeadsUpTimeOutSummary(headsUpTimeOut);
+            return true;
+        } else if (preference == mHeadsUpFloatingWindow) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.HEADS_UP_FLOATING_WINDOW,
+                    (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mHeadsUpExpanded) {
             Settings.System.putIntForUser(getContentResolver(),
