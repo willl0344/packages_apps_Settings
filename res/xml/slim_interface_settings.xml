@@ -47,7 +47,6 @@
     <Preference
         android:key="misc_tweaks"
         android:fragment="com.android.settings.du.MiscTweaks"
-        android:layout="@layout/preference_misctweaks"
         android:title="@string/misc_tweaks_title"/>
 
 </PreferenceScreen>
