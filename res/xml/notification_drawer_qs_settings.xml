@@ -25,6 +25,13 @@
         android:summary="@string/heads_up_floating_window_summary"
         android:defaultValue="false" />
 
+     <CheckBoxPreference
+        android:key="heads_up_exclude_from_lock_screen"
+        android:title="@string/heads_up_exclude_from_lock_screen"
+        android:summary="@string/heads_up_exclude_from_lock_screen_summary"
+        android:persistent="false"
+        android:defaultValue="false" />
+
     <CheckBoxPreference
         android:key="heads_up_expanded"
         android:title="@string/heads_up_expanded_title"
