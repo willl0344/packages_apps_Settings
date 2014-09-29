@@ -191,8 +191,4 @@
     <string name="app_circle_bar_included_apps_summary">Apps will show in app sidebar</string>
     <string name="category_app_circle_bar_title">App launcher</string>
 
-    <!-- Heads-up disable on lockscreen -->
-    <string name="heads_up_exclude_from_lock_screen">Disable on lockscreen</string>
-	    <string name="heads_up_exclude_from_lock_screen_summary">Do not show heads up on lockscreen</string>
-
 </resources>
