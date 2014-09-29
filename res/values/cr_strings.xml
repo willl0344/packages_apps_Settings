@@ -179,10 +179,6 @@
     <!-- Text for Misc Tweaks entry -->
     <string name="misc_tweaks_title">Misc. tweaks</string>
 
-    <!-- Heads up floating window -->
-    <string name="heads_up_floating_window">Launch in floating window</string>
-    <string name="heads_up_floating_window_summary">Tapping on the notification will open the app in a floating window</string>
-
 	<!-- App Circle Sidebar -->
     <string name="app_circle_bar_title">Circle ribbon</string>
     <string name="app_circle_sidebar_summary_real">Launch apps faster from a sidebar and open multiple apps on one screen to multitask</string>
