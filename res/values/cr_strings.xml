@@ -191,4 +191,8 @@
     <string name="heads_up_floating_window">Launch in floating window</string>
     <string name="heads_up_floating_window_summary">Tapping on the notification will open the app in a floating window</string>
 
+    <!-- Heads-up disable on lockscreen -->
+    <string name="heads_up_exclude_from_lock_screen">Disable on lockscreen</string>
+	<string name="heads_up_exclude_from_lock_screen_summary">Do not show heads up on lockscreen</string>
+
 </resources>

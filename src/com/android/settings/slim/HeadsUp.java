@@ -48,6 +48,8 @@ public class HeadsUp extends SettingsPreferenceFragment
 
     private static final String PREF_HEADS_UP_FLOATING_WINDOW =
             "heads_up_floating_window";
+    private static final String PREF_HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN =
+            "heads_up_exclude_from_lock_screen";
     private static final String PREF_HEADS_UP_EXPANDED =
             "heads_up_expanded";
     private static final String PREF_HEADS_UP_SNOOZE_TIME =
@@ -66,6 +68,7 @@ public class HeadsUp extends SettingsPreferenceFragment
     ListPreference mHeadsUpSnoozeTime;
     ListPreference mHeadsUpTimeOut;
     CheckBoxPreference mHeadsUpFloatingWindow;
+    CheckBoxPreference mHeadsExcludeFromLockscreen;
     CheckBoxPreference mHeadsUpExpanded;
     CheckBoxPreference mHeadsUpShowUpdates;
     CheckBoxPreference mHeadsUpGravity;
@@ -91,6 +94,11 @@ public class HeadsUp extends SettingsPreferenceFragment
         mHeadsUpFloatingWindow.setChecked(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.HEADS_UP_FLOATING_WINDOW, 0, UserHandle.USER_CURRENT) == 1);
         mHeadsUpFloatingWindow.setOnPreferenceChangeListener(this);
+
+        mHeadsExcludeFromLockscreen = (CheckBoxPreference) findPreference(PREF_HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN);
+        mHeadsExcludeFromLockscreen.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN, 0, UserHandle.USER_CURRENT) == 1);
+        mHeadsExcludeFromLockscreen.setOnPreferenceChangeListener(this);
 
         mHeadsUpExpanded = (CheckBoxPreference) findPreference(PREF_HEADS_UP_EXPANDED);
         mHeadsUpExpanded.setChecked(Settings.System.getIntForUser(getContentResolver(),
@@ -180,6 +188,11 @@ public class HeadsUp extends SettingsPreferenceFragment
         } else if (preference == mHeadsUpFloatingWindow) {
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.HEADS_UP_FLOATING_WINDOW,
+                    (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mHeadsExcludeFromLockscreen) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN,
                     (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mHeadsUpExpanded) {
