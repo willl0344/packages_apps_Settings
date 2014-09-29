@@ -23,7 +23,7 @@
         android:key="heads_up_floating_window"
         android:title="@string/heads_up_floating_window"
         android:summary="@string/heads_up_floating_window_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <CheckBoxPreference
         android:key="heads_up_expanded"
