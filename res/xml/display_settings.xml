@@ -138,6 +138,11 @@
                 android:title="@string/wakeup_when_plugged_unplugged_title"
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
                 android:defaultValue="true" />
+
+            <CheckBoxPreference
+                android:key="disable_smart_cover"
+                android:title="@string/disable_smart_cover_title"
+                android:summary="@string/disable_smart_cover_desc" />
            
              <!-- Proximity wake workaround -->
              <CheckBoxPreference

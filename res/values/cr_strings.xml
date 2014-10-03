@@ -165,6 +165,10 @@
     <string name="general_settings_style_title">General options</string>
     <string name="restart_systemui">Restart SystemUI</string>
 
+    <!-- Disable Smart Cover -->
+    <string name="disable_smart_cover_title">Force disable smart cover window</string>
+    <string name="disable_smart_cover_desc">Check if your phone has a smart cover and you do not wish to trigger the smart window</string>
+
     <!-- Wifi AP: connected devices -->
     <string name="wifi_ap_clients_title">Connected devices</string>
     <string name="wifi_ap_client_ap_disabled">Hotspot is disabled</string>
