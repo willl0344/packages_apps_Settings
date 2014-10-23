@@ -195,4 +195,8 @@
     <string name="heads_up_exclude_from_lock_screen">Disable on lockscreen</string>
 	<string name="heads_up_exclude_from_lock_screen_summary">Do not show heads up on lockscreen</string>
 
+    <!-- Force expand notifications -->
+    <string name="notification_force_expand_title">Force expanded notification</string>
+    <string name="notification_force_expand_summary">Force expanded notifications if supported</string>
+
 </resources>
