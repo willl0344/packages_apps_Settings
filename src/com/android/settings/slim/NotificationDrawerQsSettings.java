@@ -44,6 +44,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
     public static final String TAG = "NotificationDrawerSettings";
 
+    private static final String PREF_FORCE_EXPANDED_NOTIFICATIONS =
+            "force_expanded_notifications";
     private static final String PREF_NOTIFICATION_HIDE_LABELS =
             "notification_hide_labels";
     private static final String PREF_NOTIFICATION_ALPHA =
@@ -67,6 +69,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     private static final String PREF_TILE_PICKER =
             "tile_picker";
 
+    CheckBoxPreference mExpandNotif;
     ListPreference mHideLabels;
     SlimSeekBarPreference mNotificationAlpha;
     CheckBoxPreference mReminder;
@@ -84,6 +87,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.notification_drawer_qs_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        //Force expanded notifications
+        mExpandNotif = (CheckBoxPreference) findPreference(PREF_FORCE_EXPANDED_NOTIFICATIONS);
+        mExpandNotif.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0, UserHandle.USER_CURRENT) == 1);
+        mExpandNotif.setOnPreferenceChangeListener(this);
 
         mHideLabels = (ListPreference) findPreference(PREF_NOTIFICATION_HIDE_LABELS);
         int hideCarrier = Settings.System.getInt(getContentResolver(),
@@ -203,7 +212,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mHideLabels) {
+        if (preference == mExpandNotif) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.FORCE_EXPANDED_NOTIFICATIONS,
+                    (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mHideLabels) {
             int hideLabels = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_HIDE_LABELS,
                     hideLabels);
