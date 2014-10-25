@@ -139,6 +139,12 @@
                 android:summary="@string/proximity_wake_summary"
                 android:defaultValue="true" />
 
+             <!-- Proximity wake workaround -->
+             <CheckBoxPreference
+                android:key="is_inaccurate_proximity"
+                android:title="@string/is_inaccurate_proximity_title"
+                android:summary="@string/is_inaccurate_proximity_summary" />
+
             <CheckBoxPreference
                 android:key="wakeup_when_plugged_unplugged"
                 android:title="@string/wakeup_when_plugged_unplugged_title"
