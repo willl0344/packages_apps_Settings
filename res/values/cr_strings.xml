@@ -15,7 +15,7 @@
 
     <!-- Asswax -->
     <string name="asswax_title">Asswax</string>
-    <string name="asswax_desc">Minions and henchmen, hail the asswax. Gluten-free, ebola-free ROM.</string>
+    <string name="asswax_desc">Minions and henchmen, hail the asswax. Gluten-free, Ebola-free ROM.</string>
 
     <!-- Screen recorder -->
     <string name="screen_recorder_title">Screen recorder</string>
@@ -103,7 +103,7 @@
 
      <!-- Proximity work-around -->
      <string name="is_inaccurate_proximity_title">Inaccurate proximity</string>
-     <string name="is_inaccurate_proximity_summary">Work-around for inaccurate proximity sensors, this will force phone to turn on the screen after the call has ended.</string>
+     <string name="is_inaccurate_proximity_summary">Work-around for inaccurate proximity sensors. This will force phone to turn on the screen after the call has ended.</string>
 
     <!--  Recents clear all -->
     <string name="recents_clear_all_button" >Recents panel settings</string>
