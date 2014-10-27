@@ -66,10 +66,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
+<<<<<<< HEAD
     private static final String KEY_DISABLE_SMART_COVER = "disable_smart_cover";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
 
     private static final String KEY_IS_INACCURATE_PROXIMITY = "is_inaccurate_proximity";
+=======
+    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+    private static final String KEY_DISABLE_SMART_COVER = "disable_smart_cover";
+>>>>>>> slim/kk4.4-caf
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -98,9 +103,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mInaccurateProximityPref;
 
     private PreferenceScreen mDisplayRotationPreference;
+<<<<<<< HEAD
     private CheckBoxPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
     private ListPreference mPeekWakeTimeout;
+=======
+    private CheckBoxPreference mDisableSmartCover;
+>>>>>>> slim/kk4.4-caf
     private WarnedListPreference mFontSizePref;
     private CheckBoxPreference mNotificationPulse;
     private PreferenceCategory mLightOptions;
@@ -119,9 +128,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
 
+<<<<<<< HEAD
     private PackageStatusReceiver mPackageStatusReceiver;
     private IntentFilter mIntentFilter;
 
+=======
+>>>>>>> slim/kk4.4-caf
     private int[] mSmartCoverCoords;
 
     private ContentObserver mAccelerometerRotationObserver =
@@ -220,7 +232,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         // Disable smart cover
          mDisableSmartCover = (CheckBoxPreference) findPreference(KEY_DISABLE_SMART_COVER);
+<<<<<<< HEAD
          PreferenceCategory wakeupOptions = (PreferenceCategory) findPreference("category_wakeup_options");
+=======
+         PreferenceCategory wakeupOptions
+                = (PreferenceCategory) findPreference("category_wakeup_options");
+>>>>>>> slim/kk4.4-caf
          if (mDisableSmartCover != null) {
              if (mSmartCoverCoords == null) {
                     wakeupOptions.removePreference(mDisableSmartCover);
@@ -231,6 +248,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
              }
          }
 
+<<<<<<< HEAD
         // In-accurate proximity
          mInaccurateProximityPref = (CheckBoxPreference) findPreference(KEY_IS_INACCURATE_PROXIMITY);
          if (mInaccurateProximityPref != null) {
@@ -239,6 +257,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
              mInaccurateProximityPref.setOnPreferenceChangeListener(this);
          }
 
+=======
+>>>>>>> slim/kk4.4-caf
             //If we're removed everything, get rid of the category
             if (mLightOptions.getPreferenceCount() == 0) {
                 prefSet.removePreference(mLightOptions);
@@ -276,6 +296,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mPeekWakeTimeout.setValue(String.valueOf(peekWakeTimeout));
         mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntry());
         mPeekWakeTimeout.setOnPreferenceChangeListener(this);
+
+        mProximityWake = (CheckBoxPreference) findPreference(KEY_PROXIMITY_WAKE);
+        if(!getResources().getBoolean(
+                com.android.internal.R.bool.config_proximityCheckOnWake)) {
+                mWakeUpOptions.removePreference(mProximityWake);
+                counter++;
+        } else {
+            mProximityWake.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.PROXIMITY_ON_WAKE, 0) == 1);
+            mProximityWake.setOnPreferenceChangeListener(this);
+        }
 
         mProximityWake = (CheckBoxPreference) findPreference(KEY_PROXIMITY_WAKE);
         if(!getResources().getBoolean(
@@ -614,6 +645,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
              Settings.System.putInt(getContentResolver(),
                      Settings.System.DISABLE_SMART_COVER,
                      ((Boolean) objValue).booleanValue() ? 1 : 0);
+<<<<<<< HEAD
         } else if (KEY_IS_INACCURATE_PROXIMITY.equals(key)) {
              Settings.System.putInt(getContentResolver(),
                      Settings.System.INACCURATE_PROXIMITY_WORKAROUND,
@@ -634,6 +666,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     peekWakeTimeout, UserHandle.USER_CURRENT);
             mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntries()[index]);
             return true;
+=======
+>>>>>>> slim/kk4.4-caf
         }
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),
