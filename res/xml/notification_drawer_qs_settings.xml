@@ -16,7 +16,6 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<<<<<<< HEAD:res/xml/notification_drawer_qs_settings.xml
     <PreferenceCategory
         android:title="@string/notification_drawer_title" />
 
@@ -26,8 +25,6 @@
         android:summary="@string/notification_force_expand_summary"
         android:defaultValue="false" />
 
-=======
->>>>>>> slim/kk4.4-caf:res/xml/notification_drawer_settings.xml
     <ListPreference
         android:key="notification_hide_labels"
         android:title="@string/notification_hide_labels_title"
@@ -62,12 +59,6 @@
          <extra android:name="fragment" android:value="com.android.settings.slim.fragments.NotificationsShortcutFragment" />
      </PreferenceScreen>
 
-     <Preference
-         android:fragment="com.android.settings.slim.NotificationDrawerStyle"
-         android:key="notification_style"
-         android:title="@string/notification_style_title"
-         android:summary="@string/notification_style_summary" />
-
     <PreferenceCategory
         android:title="@string/noti_reminder_category" />
 
@@ -100,5 +91,50 @@
         android:ringtoneType="all"
         android:showSilent="false"
         android:dependency="noti_reminder_enabled" />
+
+
+    <PreferenceCategory
+        android:title="@string/quick_settings_title" />
+
+        <PreferenceScreen
+            android:key="tile_picker"
+            android:title="@string/tile_picker_title"
+            android:summary="@string/tile_picker_summary"
+            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+
+        <ListPreference
+            android:key="quick_pulldown"
+            android:title="@string/title_quick_pulldown"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="smart_pulldown"
+            android:title="@string/smart_pulldown_title"
+            android:entries="@array/smart_pulldown_entries"
+            android:entryValues="@array/smart_pulldown_values"
+            android:persistent="false" />
+
+        <CheckBoxPreference
+            android:key="collapse_panel"
+            android:title="@string/title_collapse_panel"
+            android:summary="@string/summary_collapse_panel"
+            android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:key="quicksettings_tiles_style"
+            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTilesStyle"
+            android:title="@string/quicksettings_tiles_style"
+            android:summary="@string/summary_quicksettings_tiles_style" />
+
+    <PreferenceCategory
+        android:title="@string/additional_options_title" />
+
+     <Preference
+         android:fragment="com.android.settings.slim.NotificationDrawerStyle"
+         android:key="notification_style"
+         android:title="@string/notification_style_title"
+         android:summary="@string/notification_style_summary" />
 
 </PreferenceScreen>
