@@ -66,13 +66,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
-<<<<<<< HEAD
     private static final String KEY_IS_INACCURATE_PROXIMITY = "is_inaccurate_proximity";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
-=======
-    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
-
->>>>>>> slim/kk4.4
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -256,17 +251,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mPeekWakeTimeout.setValue(String.valueOf(peekWakeTimeout));
         mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntry());
         mPeekWakeTimeout.setOnPreferenceChangeListener(this);
-
-        mProximityWake = (CheckBoxPreference) findPreference(KEY_PROXIMITY_WAKE);
-        if(!getResources().getBoolean(
-                com.android.internal.R.bool.config_proximityCheckOnWake)) {
-                mWakeUpOptions.removePreference(mProximityWake);
-                counter++;
-        } else {
-            mProximityWake.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.PROXIMITY_ON_WAKE, 0) == 1);
-            mProximityWake.setOnPreferenceChangeListener(this);
-        }
 
         mProximityWake = (CheckBoxPreference) findPreference(KEY_PROXIMITY_WAKE);
         if(!getResources().getBoolean(

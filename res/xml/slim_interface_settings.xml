@@ -25,14 +25,14 @@
         android:title="@string/battery_icon_title" />
 
     <PreferenceScreen
-        android:fragment="com.android.settings.Lockscreen"
-        android:key="lockscreen_settings"
-        android:title="@string/lockscreen_settings_title" />
+        android:fragment="com.android.settings.slim.HeadsUp"
+        android:key="heads_up"
+        android:title="@string/heads_up_title" />
 
     <PreferenceScreen
-        android:key="quick_settings"
-        android:fragment="com.android.settings.slim.QsSettings"
-        android:title="@string/qs_title" />
+        android:key="notification_drawer_qs"
+        android:fragment="com.android.settings.slim.NotificationDrawerQsSettings"
+        android:title="@string/notification_drawer_qs_title" />
 
     <PreferenceScreen
         android:key="status_bar"
@@ -49,7 +49,6 @@
         android:fragment="com.android.settings.slim.RecentPanel"
         android:title="@string/recent_panel_category" />
 
-<<<<<<< HEAD
     <PreferenceScreen
         android:key="app_circle_sidebar"
         android:fragment="com.android.settings.crdroid.AppCircleSidebar"
@@ -59,19 +58,5 @@
         android:key="misc_tweaks"
         android:fragment="com.android.settings.du.MiscTweaks"
         android:title="@string/misc_tweaks_title"/>
-=======
-    <PreferenceCategory
-        android:title="@string/notifications_category_title" />
-
-    <PreferenceScreen
-        android:fragment="com.android.settings.slim.HeadsUp"
-        android:key="heads_up"
-        android:title="@string/heads_up_title" />
-
-    <PreferenceScreen
-        android:key="notification_drawer"
-        android:fragment="com.android.settings.slim.NotificationDrawerSettings"
-        android:title="@string/notification_drawer_title" />
->>>>>>> slim/kk4.4
 
 </PreferenceScreen>

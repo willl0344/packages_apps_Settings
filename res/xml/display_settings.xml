@@ -23,6 +23,11 @@
                 android:persistent="false"/>
 
         <PreferenceScreen
+                android:key="wallpaper"
+                android:title="@string/wallpaper_settings_title"
+                android:fragment="com.android.settings.WallpaperTypeSettings" />
+
+        <PreferenceScreen
                 android:key="display_rotation"
                 android:fragment="com.android.settings.slim.DisplayRotation"
                 android:title="@string/display_rotation_title" />
@@ -134,15 +139,12 @@
                 android:summary="@string/proximity_wake_summary"
                 android:defaultValue="true" />
 
-<<<<<<< HEAD
              <!-- Proximity wake workaround -->
              <CheckBoxPreference
                 android:key="is_inaccurate_proximity"
                 android:title="@string/is_inaccurate_proximity_title"
                 android:summary="@string/is_inaccurate_proximity_summary" />
 
-=======
->>>>>>> slim/kk4.4
             <CheckBoxPreference
                 android:key="wakeup_when_plugged_unplugged"
                 android:title="@string/wakeup_when_plugged_unplugged_title"

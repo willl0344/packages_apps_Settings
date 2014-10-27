@@ -17,7 +17,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="@string/lock_settings_title" />
+        android:key="security_category"
+        android:title="@string/lock_settings_title">
 
         <PreferenceScreen
             android:key="unlock_set_or_change"
@@ -25,7 +26,6 @@
             android:summary="@string/unlock_set_unlock_mode_off"
             android:persistent="false"/>
 
-<<<<<<< HEAD
         <PreferenceScreen
             android:key="keyguard_style"
             android:fragment="com.android.settings.slim.LockscreenStyle"
@@ -72,6 +72,4 @@
 
     </PreferenceCategory>
 
-=======
->>>>>>> slim/kk4.4
 </PreferenceScreen>
